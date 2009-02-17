@@ -2,7 +2,7 @@
 
 Name: sugar
 Version: 0.83.7
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Sugar window manager
 License: GPL/LGPL
 Group: Graphical desktop/Other
@@ -21,12 +21,12 @@ Requires: python-gtksourceview
 Requires: xdpyinfo  
 Requires: pygtk2.0  
 Requires: GConf2  
-Requires: gstreamer0.10-plugins-base  
 Requires: matchbox-window-manager  
 Requires: gstreamer0.10-python  
 Requires: dbus  
 Requires: gtk+2  
 Requires: python  
+Requires: gstreamer0.10-plugins-base  
 Requires: python-cjson  
 Requires: hal  
 Requires: python-numpy  
@@ -73,12 +73,23 @@ make  \
 	install
 %find_lang sugar
 
+install -d -m 0755 %{buildroot}/%{_sysconfdir}/X11/wmsession.d/
+cat <<__EOF__ > %{buildroot}/%{_sysconfdir}/X11/wmsession.d/08sugar
+NAME=Sugar
+ICON=%{_datadir}/sugar/data/icons/module-about_me.svg
+DESC=Sugar window manager
+EXEC=%{_bindir}/sugar
+SCRIPT:
+exec %{_bindir}/sugar
+__EOF__
+
 %clean
 rm -rf %{buildroot}
 
 %files -f sugar.lang
 %defattr(-,root,root,-)
 %dir %{_datadir}/sugar
+%config(noreplace) %{_sysconfdir}/X11/wmsession.d/*
 %config(noreplace) %{_sysconfdir}/dbus*/system.d/*
 %config(noreplace) %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
