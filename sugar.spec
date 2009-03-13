@@ -13,7 +13,7 @@ Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.84.0
 Patch: sugar-0.84.0-sugar-start-script.patch
 Patch1: sugar-0.84.0-sugar-logout-forever.patch
 
-Requires: sugar-artwork >= 0.84.0
+Requires: sugar-artwork >= 0.84.1
 Requires: dbus  
 Requires: dbus-x11  
 Requires: GConf2  
