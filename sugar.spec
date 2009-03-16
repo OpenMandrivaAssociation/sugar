@@ -2,7 +2,7 @@
 
 Name: sugar
 Version: 0.84.0
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Sugar window manager
 License: GPL/LGPL
 Group: Graphical desktop/Other
@@ -10,8 +10,9 @@ Url: http://sugarlabs.org/
 
 Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.84.0.tar.bz2
 
-Patch: sugar-0.84.0-sugar-start-script.patch
-Patch1: sugar-0.84.0-sugar-logout-forever.patch
+Patch: sugar-0.84.0-sugar-licence.patch
+Patch1: sugar-0.84.0-sugar-start-script.patch
+Patch2: sugar-0.84.0-sugar-logout-forever.patch
 
 Requires: sugar-artwork >= 0.84.1
 Requires: dbus  
@@ -61,6 +62,7 @@ to run a Sugar environment similar to what is on the XO laptop.
 %setup -q -n sugar-0.84.0
 %patch -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %configure 
