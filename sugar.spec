@@ -2,7 +2,7 @@
 
 Name: sugar
 Version: 0.84.2
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Sugar window manager
 License: GPL/LGPL
 Group: Graphical desktop/Other
@@ -12,7 +12,7 @@ Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.84.2
 
 Patch: sugar-0.84.2-sugar-start-script.patch
 Patch1: sugar-0.84.2-sugar-461.patch
-Patch2: sugar-0.84.2-sugar-701.patch
+Patch2: sugar-0.84.2-sugar-707.patch
 Patch3: sugar-0.84.2-sugar-702.patch
 
 Requires: sugar-artwork >= 0.84.1
