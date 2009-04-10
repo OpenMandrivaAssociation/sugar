@@ -41,7 +41,7 @@ Requires: xdpyinfo
 BuildRequires: perl-XML-Parser  
 BuildRequires: libGConf2-devel  
 BuildRequires: gettext  
-BuildRequires: libgtk+2-devel  
+BuildRequires: gtk+2-devel  
 BuildRequires: intltool >= 0.33
 BuildRequires: pygtk2.0-devel  
 BuildRequires: libpython-devel  
