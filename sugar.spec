@@ -35,6 +35,7 @@ Requires: pygtk2.0
 Requires: python-gtksourceview  
 Requires: python  
 Requires: python-cjson  
+Requires: sugar-base >= 0.84.0
 Requires: sugar-toolkit >= 0.84.2
 Requires: xdpyinfo  
 
@@ -45,6 +46,7 @@ BuildRequires: gtk+2-devel
 BuildRequires: intltool >= 0.33
 BuildRequires: pygtk2.0-devel  
 BuildRequires: libpython-devel  
+BuildRequires: sugar-base >= 0.84.0
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -75,14 +77,14 @@ to run a Sugar environment similar to what is on the XO laptop.
 %patch7 -p1
 
 %build
-%configure 
-make 
+%configure
+make
 
 %install
 rm -rf %{buildroot}
-make  \
-	DESTDIR=%{buildroot} \
-	install
+export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+make DESTDIR=%{buildroot} install
+unset GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL
 %find_lang sugar
 
 install -d -m 0755 %{buildroot}/%{_sysconfdir}/X11/wmsession.d/
@@ -100,17 +102,16 @@ rm -rf %{buildroot}
 
 %files -f sugar.lang
 %defattr(-,root,root,-)
-%dir %{_datadir}/sugar
-%config(noreplace) %{_sysconfdir}/X11/wmsession.d/*
-%config(noreplace) %{_sysconfdir}/dbus*/system.d/*
-%config(noreplace) %{_sysconfdir}/gconf/schemas/*
+%config %{_sysconfdir}/dbus*/system.d/*
+%config %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
 %exclude %{_bindir}/sugar-emulator
-%{python_sitelib}/*
-%{_datadir}/sugar/*
+%{python_sitelib}/jarabe
+%{_datadir}/sugar
 %{_datadir}/mime/packages/*
 %{_datadir}/xsessions/sugar.desktop
 %doc AUTHORS COPYING README
+%config %{_sysconfdir}/X11/wmsession.d/*
 
 %files emulator
 %defattr(-,root,root,-)
