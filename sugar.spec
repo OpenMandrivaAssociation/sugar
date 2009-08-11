@@ -2,7 +2,7 @@
 
 Name: sugar
 Version: 0.85.3
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Sugar window manager
 License: GPL/LGPL
 Group: Graphical desktop/Other
@@ -69,6 +69,7 @@ to run a Sugar environment similar to what is on the XO laptop.
 %patch3 -p1
 
 %build
+%define __libtoolize true
 %configure
 make
 
