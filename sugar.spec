@@ -3,7 +3,7 @@
 
 Name: sugar
 Version: 0.86.0
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Sugar window manager
 License: GPL/LGPL
 Group: Graphical desktop/Other
@@ -108,6 +108,7 @@ rm -rf %{buildroot}
 %{_datadir}/mime/packages/*
 %{_datadir}/xsessions/sugar.desktop
 %{_datadir}/applications/sugar-emulator.desktop
+%{_datadir}/icons/hicolor/scalable/apps/sugar-xo.svg
 %doc AUTHORS COPYING README
 %config %{_sysconfdir}/X11/wmsession.d/*
 
