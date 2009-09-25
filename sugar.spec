@@ -2,18 +2,19 @@
 #       See http://wiki.sugarlabs.org/go/Deployment_Team/jhconvert for details
 
 Name: sugar
-Version: 0.85.8
+Version: 0.86.0
 Release: %mkrel 1
 Summary: Sugar window manager
 License: GPL/LGPL
 Group: Graphical desktop/Other
 Url: http://sugarlabs.org/
 
-Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.85.8.tar.bz2
+Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.86.0.tar.bz2
 
-Patch: sugar-0.85.8-sugar-start-script.patch
+Patch: sugar-0.86.0-sugar-start-script.patch
+Patch1: sugar-0.86.0-sugar-1139.patch
 
-Requires: sugar-artwork >= 0.85.4
+Requires: sugar-artwork >= 0.86.0
 Requires: dbus  
 Requires: dbus-x11  
 Requires: GConf2  
@@ -29,8 +30,8 @@ Requires: python-gtksourceview
 Requires: python  
 Requires: python-cjson  
 Requires: python-xklavier  
-Requires: sugar-base >= 0.85.6
-Requires: sugar-toolkit >= 0.85.8
+Requires: sugar-base >= 0.86.0
+Requires: sugar-toolkit >= 0.86.0
 Requires: xdpyinfo  
 Requires: xsetroot  
 
@@ -44,7 +45,7 @@ BuildRequires: intltool >= 0.33
 BuildRequires: libtool  
 BuildRequires: pygtk2.0-devel  
 BuildRequires: libpython-devel  
-BuildRequires: sugar-base >= 0.85.6
+BuildRequires: sugar-base >= 0.86.0
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -64,8 +65,9 @@ This package contains the Sugar emulator. It is using Xephyr
 to run a Sugar environment similar to what is on the XO laptop. 
 
 %prep
-%setup -q -n sugar-0.85.8
+%setup -q -n sugar-0.86.0
 %patch -p1
+%patch1 -p1
 
 %build
 mkdir -p m4
