@@ -3,7 +3,7 @@
 
 Name: sugar
 Version: 0.86.0
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: Sugar window manager
 License: GPL/LGPL
 Group: Graphical desktop/Other
@@ -21,6 +21,7 @@ Requires: GConf2
 Requires: gstreamer0.10-plugins-base  
 Requires: gstreamer0.10-python  
 Requires: gtk+2  
+Requires: gvfs  
 Requires: gnome-python-desktop  
 Requires: metacity >= 2.27.1
 Requires: python-numpy  
