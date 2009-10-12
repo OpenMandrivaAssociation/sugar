@@ -2,17 +2,16 @@
 #       See http://wiki.sugarlabs.org/go/Deployment_Team/jhconvert for details
 
 Name: sugar
-Version: 0.86.0
-Release: %mkrel 3
+Version: 0.86.2
+Release: %mkrel 1
 Summary: Sugar window manager
 License: GPL/LGPL
 Group: Graphical desktop/Other
 Url: http://sugarlabs.org/
 
-Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.86.0.tar.bz2
+Source: http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.86.2.tar.bz2
 
-Patch: sugar-0.86.0-sugar-start-script.patch
-Patch1: sugar-0.86.0-sugar-1139.patch
+Patch: sugar-0.86.2-sugar-start-script.patch
 
 Requires: sugar-artwork >= 0.86.0
 Requires: dbus  
@@ -66,9 +65,8 @@ This package contains the Sugar emulator. It is using Xephyr
 to run a Sugar environment similar to what is on the XO laptop. 
 
 %prep
-%setup -q -n sugar-0.86.0
+%setup -q -n sugar-0.86.2
 %patch -p1
-%patch1 -p1
 
 %build
 mkdir -p m4
