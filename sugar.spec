@@ -3,7 +3,7 @@
 
 Name: sugar
 Version: 0.86.2
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Sugar window manager
 License: GPL/LGPL
 Group: Graphical desktop/Other
@@ -31,7 +31,7 @@ Requires: python
 Requires: python-cjson  
 Requires: python-xklavier  
 Requires: sugar-base >= 0.86.0
-Requires: sugar-toolkit >= 0.86.0
+Requires: sugar-toolkit >= 0.86.1
 Requires: xdpyinfo  
 Requires: xsetroot  
 
@@ -81,6 +81,7 @@ rm -rf %{buildroot}
 export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 make DESTDIR=%{buildroot} install
 export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=
+rm -rf %{buildroot}/%{_datadir}/xsessions
 %find_lang sugar
 
 install -d -m 0755 %{buildroot}/%{_sysconfdir}/X11/wmsession.d/
@@ -105,8 +106,6 @@ rm -rf %{buildroot}
 %{python_sitelib}/jarabe
 %{_datadir}/sugar
 %{_datadir}/mime/packages/*
-%{_datadir}/xsessions/sugar.desktop
-%{_datadir}/applications/sugar-emulator.desktop
 %{_datadir}/icons/hicolor/scalable/apps/sugar-xo.svg
 %doc AUTHORS COPYING README
 %config %{_sysconfdir}/X11/wmsession.d/*
@@ -114,4 +113,5 @@ rm -rf %{buildroot}
 %files emulator
 %defattr(-,root,root,-)
 %{_bindir}/sugar-emulator
+%{_datadir}/applications/sugar-emulator.desktop
 
