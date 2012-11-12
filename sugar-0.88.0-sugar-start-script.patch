@@ -1,0 +1,22 @@
+diff --git a/bin/sugar.in b/bin/sugar.in
+index 898bd59..7bdaf63 100644
+--- a/bin/sugar.in
++++ b/bin/sugar.in
+@@ -36,6 +36,11 @@ while [ $# -ne 0 ] ; do
+     shift
+ done
+ 
++if [ -z "$LANG" ]; then
++    export LANG=$(locale | grep ^LC_ALL | awk -F= '{print $2}')
++    [ "$LANG" ] || export LANG=C
++fi
++
+ if test -z "$SUGAR_SCALING"; then
+     export SUGAR_SCALING=72
+ fi
+@@ -65,4 +70,4 @@ fi
+ echo Xcursor.theme: sugar | xrdb -merge
+ metacity --no-force-fullscreen -d $DISPLAY &
+ 
+-exec sugar-session
++exec dbus-launch --exit-with-session sugar-session

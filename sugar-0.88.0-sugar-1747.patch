@@ -1,0 +1,52 @@
+From c11b7b113588a4d0a5c7d30b823c248bd5cc6724 Mon Sep 17 00:00:00 2001
+From: Aleksey Lim <alsroot@member.fsf.org>
+Date: Tue, 23 Feb 2010 07:48:03 +0000
+Subject: Minor sugar-emulator tweaks #1747
+
+
+diff --git a/src/jarabe/util/emulator.py b/src/jarabe/util/emulator.py
+index c00f1db..91fd711 100644
+--- a/src/jarabe/util/emulator.py
++++ b/src/jarabe/util/emulator.py
+@@ -27,12 +27,14 @@ import gobject
+ from sugar import env
+ 
+ 
+-default_dimensions = (800, 600)
+ def _run_xephyr(display, dpi, dimensions, fullscreen):
+     cmd = [ 'Xephyr' ]
+     cmd.append(':%d' % display)
+     cmd.append('-ac') 
+ 
++    from sugar.graphics.style import GRID_CELL_SIZE
++    default_dimensions = (GRID_CELL_SIZE * 16, GRID_CELL_SIZE * 12)
++
+     screen_size = (gtk.gdk.screen_width(), gtk.gdk.screen_height())
+ 
+     if (not dimensions) and (fullscreen is None) and \
+@@ -122,7 +124,7 @@ def main():
+     parser.add_option('-d', '--dpi', dest='dpi', type="int",
+                       help='Emulator dpi')
+     parser.add_option('-s', '--scaling', dest='scaling',
+-                      help='Sugar scaling in %')
++                      help='Sugar scaling in %', default='72')
+     parser.add_option('-i', '--dimensions', dest='dimensions',
+                       help='Emulator dimensions (ex. 1200x900)')
+     parser.add_option('-f', '--fullscreen', dest='fullscreen',
+@@ -134,12 +136,10 @@ def main():
+     (options, args) = parser.parse_args()
+ 
+     _setup_env()
++    os.environ['SUGAR_SCALING'] = options.scaling
+ 
+     server = _start_xephyr(options.dpi, options.dimensions, options.fullscreen)
+ 
+-    if options.scaling:
+-        os.environ['SUGAR_SCALING'] = options.scaling
+-
+     command = ['dbus-launch', '--exit-with-session']
+ 
+     if not args:
+-- 
+1.6.5.3
+
