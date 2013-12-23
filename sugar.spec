@@ -3,50 +3,50 @@
 
 Name:		sugar
 Version:	0.88.0
-Release:	3
+Release:	4
 Summary:	Sugar window manager
 License:	GPL/LGPL
 Group:		Graphical desktop/Other
 Url:		http://sugarlabs.org/
 
-Source:		http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.88.0.tar.bz2
+Source0:	http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.88.0.tar.bz2
 
-Patch:		sugar-0.88.0-sugar-start-script.patch
+Patch0:		sugar-0.88.0-sugar-start-script.patch
 Patch1:		sugar-0.88.0-1544.patch
 Patch2:		sugar-0.88.0-sugar-1747.patch
 
-Requires: sugar-artwork >= 0.88.0
-Requires: dbus  
-Requires: dbus-x11  
-Requires: GConf2  
-Requires: gstreamer0.10-plugins-base  
-Requires: gstreamer0.10-python  
-Requires: gtk+2  
-Requires: gvfs  
-Requires: gnome-python-desktop  
-Requires: metacity >= 2.27.1
-Requires: python-numpy  
-Requires: openssh  
-Requires: pygtk2.0  
-Requires: python-gtksourceview  
-Requires: python-xklavier  
-Requires: python-simplejson  
-Requires: sugar-base >= 0.88.0
-Requires: sugar-toolkit >= 0.88.0
-Requires: xdpyinfo  
-Requires: xsetroot  
+Requires:	sugar-artwork >= 0.88.0
+Requires:	dbus  
+Requires:	dbus-x11  
+Requires:	GConf2  
+Requires:	gstreamer0.10-plugins-base  
+Requires:	gstreamer0.10-python  
+Requires:	gtk+2  
+Requires:	gvfs  
+Requires:	gnome-python-desktop  
+Requires:	metacity >= 2.27.1
+Requires:	python-numpy  
+Requires:	openssh  
+Requires:	pygtk2.0  
+Requires:	python-gtksourceview  
+Requires:	python-xklavier  
+Requires:	python-simplejson  
+Requires:	sugar-base >= 0.88.0
+Requires:	sugar-toolkit >= 0.88.0
+Requires:	xdpyinfo  
+Requires:	xsetroot  
 
-BuildRequires: perl-XML-Parser  
-BuildRequires: autoconf  
-BuildRequires: automake  
-BuildRequires: libGConf2-devel  
-BuildRequires: gettext  
-BuildRequires: pkgconfig(gtk+-2.0)
-BuildRequires: intltool >= 0.33
-BuildRequires: libtool  
-BuildRequires: pygtk2.0-devel  
-BuildRequires: python-devel  
-BuildRequires: sugar-base >= 0.88.0
+BuildRequires:	perl-XML-Parser  
+BuildRequires:	autoconf  
+BuildRequires:	automake  
+BuildRequires:	libGConf2-devel  
+BuildRequires:	gettext  
+BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	intltool >= 0.33
+BuildRequires:	libtool  
+BuildRequires:	pygtk2.0-devel  
+BuildRequires:	python-devel  
+BuildRequires:	sugar-base >= 0.88.0
 
 BuildArch:	noarch
 
