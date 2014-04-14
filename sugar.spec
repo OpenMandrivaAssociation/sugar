@@ -2,18 +2,14 @@
 #       See http://wiki.sugarlabs.org/go/Deployment_Team/jhconvert for details
 
 Name:		sugar
-Version:	0.88.0
-Release:	4
+Version:	0.101.6
+Release:	1
 Summary:	Sugar window manager
 License:	GPL/LGPL
 Group:		Graphical desktop/Other
 Url:		http://sugarlabs.org/
 
-Source0:	http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-0.88.0.tar.bz2
-
-Patch0:		sugar-0.88.0-sugar-start-script.patch
-Patch1:		sugar-0.88.0-1544.patch
-Patch2:		sugar-0.88.0-sugar-1747.patch
+Source0:	http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-%{version}.tar.xz
 
 Requires:	sugar-artwork >= 0.88.0
 Requires:	dbus  
@@ -39,12 +35,11 @@ Requires:	xsetroot
 BuildRequires:	perl-XML-Parser  
 BuildRequires:	autoconf  
 BuildRequires:	automake  
-BuildRequires:	libGConf2-devel  
+BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	gettext  
-BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libtool  
-BuildRequires:	pygtk2.0-devel  
+BuildRequires:	gtk+3.0-devel  
 BuildRequires:	python-devel  
 BuildRequires:	sugar-base >= 0.88.0
 
@@ -56,20 +51,8 @@ Sugar is a graphical user interface aimed at children which promotes sharing
 and collaborative learning. It was introduced on the One Laptop Per Child
 (OLPC) XO laptop but is useful on other devices as well.
 
-%package emulator
-Summary:	The emulator for the Sugar Desktop Environment
-Group:		Graphical desktop/Other
-Requires:	%{name} = %{version}-%{release}
-
-%description emulator
-This package contains the Sugar emulator. It is using Xephyr
-to run a Sugar environment similar to what is on the XO laptop. 
-
 %prep
-%setup -q -n sugar-0.88.0
-%patch -p1
-%patch1 -p1
-%patch2 -p1
+%setup -q 
 
 %build
 mkdir -p m4
@@ -97,18 +80,14 @@ exec %{_bindir}/sugar
 __EOF__
 
 %files -f sugar.lang
-%doc AUTHORS COPYING README
+%doc AUTHORS COPYING 
 %config %{_sysconfdir}/dbus*/system.d/*
 %config %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
-%exclude %{_bindir}/sugar-emulator
 %{python_sitelib}/jarabe
 %{_datadir}/sugar
 %{_datadir}/mime/packages/*
-%{_datadir}/icons/hicolor/scalable/apps/sugar-xo.svg
 %config %{_sysconfdir}/X11/wmsession.d/*
-
-%files emulator
-%{_bindir}/sugar-emulator
-%{_datadir}/applications/sugar-emulator.desktop
+%{_datadir}/GConf/gsettings/sugar-schemas.convert
+%{_datadir}/glib-2.0/schemas/org.sugarlabs.gschema.xml
 
