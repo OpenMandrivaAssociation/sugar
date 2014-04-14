@@ -1,2 +1,4 @@
+removed_sources:
+  sugar-0.88.0.tar.bz2: 0558d2027fbb510490cad413006e7d44c3efe87c
 sources:
-  "sugar-0.88.0.tar.bz2": 0558d2027fbb510490cad413006e7d44c3efe87c
+  sugar-0.101.6.tar.xz: b257580ac5e49708912c27edc7eab301259195df
