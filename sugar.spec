@@ -16,7 +16,6 @@ Requires:	dbus
 Requires:	dbus-x11  
 Requires:	GConf2  
 Requires:	gstreamer1.0-plugins-base  
-Requires:	gstreamer1.0-python  
 Requires:	gtk+3  
 Requires:	gvfs  
 Requires:	metacity >= 2.27.1
