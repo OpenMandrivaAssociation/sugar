@@ -15,22 +15,21 @@ Requires:	sugar-artwork >= 0.88.0
 Requires:	dbus  
 Requires:	dbus-x11  
 Requires:	GConf2  
-Requires:	gstreamer0.10-plugins-base  
-Requires:	gstreamer0.10-python  
-Requires:	gtk+2  
+Requires:	gstreamer1.0-plugins-base  
+Requires:	gstreamer1.0-python  
+Requires:	gtk+3  
 Requires:	gvfs  
-Requires:	gnome-python-desktop  
 Requires:	metacity >= 2.27.1
 Requires:	python-numpy  
 Requires:	openssh  
-Requires:	pygtk2.0  
 Requires:	python-gtksourceview  
 Requires:	python-xklavier  
 Requires:	python-simplejson  
 Requires:	sugar-base >= 0.88.0
-Requires:	sugar-toolkit >= 0.88.0
+Requires:	sugar-toolkit-gtk3 >= 0.88.0
 Requires:	xdpyinfo  
 Requires:	xsetroot  
+Requires:	python-gi
 
 BuildRequires:	perl-XML-Parser  
 BuildRequires:	autoconf  
