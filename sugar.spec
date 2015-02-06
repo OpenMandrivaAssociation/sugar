@@ -3,7 +3,7 @@
 
 Name:		sugar
 Version:	0.101.6
-Release:	1
+Release:	2
 Summary:	Sugar window manager
 License:	GPL/LGPL
 Group:		Graphical desktop/Other
