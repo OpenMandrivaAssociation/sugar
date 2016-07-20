@@ -2,8 +2,8 @@
 #       See http://wiki.sugarlabs.org/go/Deployment_Team/jhconvert for details
 
 Name:		sugar
-Version:	0.101.6
-Release:	2
+Version:	0.108.1
+Release:	1
 Summary:	Sugar window manager
 License:	GPL/LGPL
 Group:		Graphical desktop/Other
@@ -21,14 +21,12 @@ Requires:	gvfs
 Requires:	metacity >= 2.27.1
 Requires:	python-numpy  
 Requires:	openssh  
-Requires:	python-gtksourceview  
-Requires:	python-xklavier  
-Requires:	python-simplejson  
-Requires:	sugar-base >= 0.88.0
+Requires:	python2-gtksourceview  
+Requires:	python2-simplejson  
 Requires:	sugar-toolkit-gtk3 >= 0.88.0
 Requires:	xdpyinfo  
 Requires:	xsetroot  
-Requires:	python-gi
+Requires:	python2-gi
 
 BuildRequires:	perl-XML-Parser  
 BuildRequires:	autoconf  
@@ -38,8 +36,7 @@ BuildRequires:	gettext
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libtool  
 BuildRequires:	gtk+3.0-devel  
-BuildRequires:	python-devel  
-BuildRequires:	sugar-base >= 0.88.0
+BuildRequires:	python2-devel  
 
 BuildArch:	noarch
 
@@ -82,10 +79,10 @@ __EOF__
 %config %{_sysconfdir}/dbus*/system.d/*
 %config %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
-%{python_sitelib}/jarabe
+%{python2_sitelib}/jarabe
 %{_datadir}/sugar
 %{_datadir}/mime/packages/*
 %config %{_sysconfdir}/X11/wmsession.d/*
 %{_datadir}/GConf/gsettings/sugar-schemas.convert
 %{_datadir}/glib-2.0/schemas/org.sugarlabs.gschema.xml
-
+%{_datadir}/polkit-1/actions/org.sugar.*
