@@ -19,7 +19,7 @@ Requires:	gstreamer1.0-plugins-base
 Requires:	gtk+3  
 Requires:	gvfs  
 Requires:	metacity >= 2.27.1
-Requires:	python-numpy  
+Requires:	python2-numpy  
 Requires:	openssh  
 Requires:	python2-gtksourceview  
 Requires:	python2-simplejson  
