@@ -7,7 +7,7 @@ Release:	1
 Summary:	Sugar window manager
 License:	GPL/LGPL
 Group:		Graphical desktop/Other
-Url:		http://sugarlabs.org/
+Url:		https://sugarlabs.org/
 
 Source0:	http://download.sugarlabs.org/sources/sucrose/glucose/sugar/sugar-%{version}.tar.xz
 
