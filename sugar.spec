@@ -28,6 +28,8 @@ Requires:	xdpyinfo
 Requires:	xsetroot  
 Requires:	python2-gi
 
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	perl-XML-Parser  
 BuildRequires:	autoconf  
 BuildRequires:	automake  
